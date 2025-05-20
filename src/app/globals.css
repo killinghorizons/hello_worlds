@@ -13,4 +13,14 @@
   .container {
     @apply mx-auto max-w-2xl px-5;
   }
+  .title {
+    -webkit-text-stroke: 1px #555555;
+    -webkit-text-fill-color: white;
+    -webkit-animation: fill 0.5s
+  }
+
+  [data-theme=dark] .title {
+    -webkit-text-stroke: 1px #666666;
+    -webkit-text-fill-color: black;
+  }
 }

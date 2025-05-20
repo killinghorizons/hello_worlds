@@ -10,7 +10,9 @@ export default async function Home() {
 
   return (
     <div>
-      <h1 className="text-center text-5xl font-black py-10">Hello, Worlds!</h1>
+      <h1 className="text-center text-5xl font-black py-10 title">
+        Hello, Worlds!
+      </h1>
       <Search />
       <ArticleSection name="#A" articles={articleFirst} />
     </div>
