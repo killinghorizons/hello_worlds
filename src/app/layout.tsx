@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import Nav from "@/components/Nav";
+
+const plexMono = IBM_Plex_Mono({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexSans = IBM_Plex_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -23,11 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${plexSans} ${plexMono} antialiased text-neutral-700 dark:text-neutral-200 bg-white dark:bg-black font-sans`}
       >
-        {children}
+        <ThemeProvider enableSystem={true} defaultTheme="system">
+          <Nav />
+          <main className="min-h-screen container">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

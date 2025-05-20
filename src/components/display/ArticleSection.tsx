@@ -1,0 +1,22 @@
+import { IArticle } from "@/types";
+import Article from "@/components/display/Article";
+
+interface Props {
+  name: string;
+  articles: IArticle[];
+}
+
+export default function ArticleSection({ name, articles }: Props) {
+  return (
+    <section>
+      <h2 className="text-3xl font-bold text-light-dim dark:text-dark-dim border-b border-dashed py-4 mb-10 border-neutral-300 dark:border-neutral-700 ">
+        {name}
+      </h2>
+      <div className="grid grid-cols-1 gap-10">
+        {articles.map(({ id, name, code }) => (
+          <Article key={id} code={code} name={name} />
+        ))}
+      </div>
+    </section>
+  );
+}
