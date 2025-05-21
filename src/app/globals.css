@@ -16,7 +16,11 @@
   .title {
     -webkit-text-stroke: 1px #555555;
     -webkit-text-fill-color: white;
-    -webkit-animation: fill 0.5s
+  }
+
+  .subtitle {
+    -webkit-text-stroke: 1px;
+    -webkit-text-fill-color: white;
   }
 
   [data-theme=dark] .title {

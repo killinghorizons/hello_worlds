@@ -10,9 +10,9 @@ export default function ArticleSection({ name, articles }: Props) {
   return (
     <section>
       <h2 className="text-3xl font-bold text-light-dim dark:text-dark-dim border-b border-dashed py-4 mb-10 border-neutral-300 dark:border-neutral-700 title">
-        {name}
+        {name.toLocaleUpperCase()}
       </h2>
-      <div className="grid grid-cols-1 gap-10">
+      <div className="flex flex-col gap-10">
         {articles.map(({ id, name, code }) => (
           <Article key={id} code={code} name={name} />
         ))}

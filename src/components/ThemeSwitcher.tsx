@@ -8,7 +8,6 @@ export default function ThemeSwitcher() {
 
   function handleClick() {
     resolvedTheme === "dark" ? setTheme("light") : setTheme("dark");
-    console.log(resolvedTheme);
   }
 
   useEffect(() => {

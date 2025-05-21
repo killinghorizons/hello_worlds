@@ -1,15 +1,15 @@
 "use client";
-// React
-import { useState } from "react";
 // Comp
-import SearchIcon from "@/components/SearchIcon";
+import SearchIcon from "@/components/icons/SearchIcon";
 
-export default function Search() {
-  const [searchQuery, setSearchQuery] = useState("");
+interface Props {
+  searchQuery: string;
+  setSearchQuery: (searchQuery: string) => void;
+}
 
+export default function Search({ searchQuery, setSearchQuery }: Props) {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setSearchQuery(e.target.value);
-    console.log(searchQuery);
   }
 
   return (
@@ -19,6 +19,7 @@ export default function Search() {
         <input
           type="search"
           id="searchQuery"
+          name="searchQuery"
           placeholder="Search by pl name"
           className="outline-none block w-full border-l border-dashed border-neutral-200 dark:border-neutral-800 h-full pl-2 mr-2"
           value={searchQuery}
