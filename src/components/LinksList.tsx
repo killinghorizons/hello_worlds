@@ -55,7 +55,7 @@ export default function LinksList() {
       href: "/category/l",
     },
     {
-      label: "m",
+      label: "M",
       href: "/category/m",
     },
     {

@@ -13,7 +13,7 @@ export default async function Category({ params }: Props) {
   if (data.length < 1) return notFound();
 
   return (
-    <div className="py-24">
+    <div className="py-12">
       <ArticleSection name={slug} articles={data} />
     </div>
   );

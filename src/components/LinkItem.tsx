@@ -12,7 +12,6 @@ export default function LinkItem({ label, href }: Props) {
         <p className="text-3xl font-bold text-pink-600 dark:text-pink-400">
           {label}
         </p>
-        <p className="text-sm font-semibold">(125)</p>
       </Link>
     </li>
   );

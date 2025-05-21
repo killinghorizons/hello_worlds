@@ -29,7 +29,8 @@ export const getCategory = async (category: string) => {
     const data = await db
       .select()
       .from(hello)
-      .where(ilike(hello.name, `${category}%`));
+      .where(ilike(hello.name, `${category}%`))
+      .orderBy(hello.name);
     return data;
   } catch (error) {
     console.error(error);
